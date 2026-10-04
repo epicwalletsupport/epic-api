@@ -10,7 +10,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
-    "db:seed:seller": "tsx scripts/seed-seller.ts"
+    "db:seed:seller": "tsx scripts/seed-seller.ts",
+    "postinstall": "node scripts/ensure-r2-bucket.mjs"
   },
   "repository": {
     "type": "git",
