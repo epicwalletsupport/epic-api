@@ -50,6 +50,21 @@ npm run db:seed:seller
 npm run dev
 ```
 
+## Cloudflare Workers Builds
+
+If the repo root contains `epic-web` and `epic-api`, set **Root directory** to `epic-api`.
+
+| Setting | Value |
+|---------|--------|
+| Build command | *(none)* |
+| Deploy command | `npm run deploy` |
+
+The deploy script creates R2 bucket `epic-valut` if missing (same Cloudflare account as the build token), then runs `wrangler deploy`. The Worker name in `wrangler.jsonc` must match the connected Worker (**`epic-api`**).
+
+Set these **secrets** on the `epic-api` Worker: `DATABASE_URL`, `JWT_SECRET`, `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `RAZORPAY_WEBHOOK_SECRET`.
+
+Production API URL: `https://epic-api.<your-subdomain>.workers.dev` (update Razorpay webhook and `VITE_API_URL` if you previously used another Worker name).
+
 ## Frontend integration
 
 Set in `epic-web`:
