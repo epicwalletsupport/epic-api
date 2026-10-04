@@ -1,9 +1,9 @@
 export type UserRole = 'customer' | 'seller' | 'admin'
 
 export interface Env {
-  HYPERDRIVE: Hyperdrive
+  HYPERDRIVE?: Hyperdrive
   PRODUCT_MEDIA_BUCKET: R2Bucket
-  DATABASE_URL?: string
+  DATABASE_URL: string
   JWT_SECRET: string
   RAZORPAY_KEY_ID: string
   RAZORPAY_KEY_SECRET: string

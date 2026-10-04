@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "epic-api",
+  "name": "e-com-backend",
   "main": "src/index.ts",
   "compatibility_date": "2024-09-23",
   "compatibility_flags": ["nodejs_compat"],
@@ -11,12 +11,6 @@
     {
       "binding": "PRODUCT_MEDIA_BUCKET",
       "bucket_name": "epic-valut"
-    }
-  ],
-  "hyperdrive": [
-    {
-      "binding": "HYPERDRIVE",
-      "id": "REPLACE_WITH_HYPERDRIVE_ID"
     }
   ]
 }

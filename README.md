@@ -29,21 +29,22 @@ Routes are mounted at both `/` and `/api` so the React app can use `VITE_API_URL
 
 1. Copy `.dev.vars.example` to `.dev.vars` and fill secrets.
 2. Create a Neon database and set `DATABASE_URL`.
-3. Create Hyperdrive in Cloudflare and replace `REPLACE_WITH_HYPERDRIVE_ID` in `wrangler.jsonc`.
-4. Create / bind R2 bucket `epic-product-media` (or update `wrangler.jsonc`).
-5. Apply schema:
+3. Set Worker secret `DATABASE_URL` to your Neon connection string (Cloudflare dashboard or `wrangler secret put DATABASE_URL`).
+4. Create / bind R2 bucket `epic-valut` (see `wrangler.jsonc`).
+5. Optional: add [Hyperdrive](https://developers.cloudflare.com/hyperdrive/) later and bind `HYPERDRIVE` in `wrangler.jsonc` for connection pooling.
+6. Apply schema:
 
 ```bash
 npm run db:push
 ```
 
-6. Seed the single seller/admin account:
+7. Seed the single seller/admin account:
 
 ```bash
 npm run db:seed:seller
 ```
 
-7. Start locally:
+8. Start locally:
 
 ```bash
 npm run dev
