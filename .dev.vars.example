@@ -1,0 +1,12 @@
+DATABASE_URL=postgresql://USER:PASSWORD@HOST/db?sslmode=require
+# Same URL as DATABASE_URL — required for `npm run dev` (Wrangler + Hyperdrive local)
+CLOUDFLARE_HYPERDRIVE_LOCAL_CONNECTION_STRING_HYPERDRIVE=postgresql://USER:PASSWORD@HOST/db?sslmode=require
+JWT_SECRET=replace-with-long-random-secret
+RAZORPAY_KEY_ID=rzp_test_xxxxx
+RAZORPAY_KEY_SECRET=replace-me
+# From Razorpay Dashboard → Webhooks (must match deployed Worker URL, e.g. .../api/payment/webhook)
+RAZORPAY_WEBHOOK_SECRET=replace-me
+# Public R2 dev domain (Enable public access on the bucket in Cloudflare)
+R2_PUBLIC_URL=https://pub-xxxxx.r2.dev
+ACCESS_TOKEN_TTL_MINUTES=15
+REFRESH_TOKEN_TTL_DAYS=30
